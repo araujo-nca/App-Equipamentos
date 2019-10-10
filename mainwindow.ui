@@ -77,6 +77,9 @@ color: rgb(60, 66, 69);</string>
        <height>111</height>
       </rect>
      </property>
+     <property name="whatsThis">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Transformadores de Corrente&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
      <property name="styleSheet">
       <string notr="true">font: 10pt &quot;Lucida Sans Unicode&quot;;</string>
      </property>
@@ -103,6 +106,9 @@ color: rgb(60, 66, 69);</string>
        <height>111</height>
       </rect>
      </property>
+     <property name="whatsThis">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Transformadores de Potencial&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
      <property name="styleSheet">
       <string notr="true">font: 10pt &quot;Lucida Sans Unicode&quot;;</string>
      </property>
@@ -128,6 +134,9 @@ color: rgb(60, 66, 69);</string>
        <width>249</width>
        <height>111</height>
       </rect>
+     </property>
+     <property name="whatsThis">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Condutores Elétricos&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="styleSheet">
       <string notr="true">font: 10pt &quot;Lucida Sans Unicode&quot;;</string>
