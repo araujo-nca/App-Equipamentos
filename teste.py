@@ -16,7 +16,7 @@ class Ui(QtWidgets.QMainWindow):
 
     @pyqtSlot()
     def on_click(self):
-        self.label.setText('some text')
+        self.label.setText('Merecemos 10!')
 
 app = QtWidgets.QApplication(sys.argv)
 window = Ui()
