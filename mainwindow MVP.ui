@@ -27,7 +27,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>myIcon.png</normaloff>myIcon.png</iconset>
+    <normaloff>Imagens/myIcon.png</normaloff>Imagens/myIcon.png</iconset>
   </property>
   <property name="autoFillBackground">
    <bool>true</bool>
@@ -64,7 +64,7 @@
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap>My Post2.png</pixmap>
+      <pixmap>Imagens/Linha.png</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -94,11 +94,14 @@
       <property name="whatsThis">
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Condutores Elétricos&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
       <property name="styleSheet">
        <string notr="true">font: 10pt &quot;Lucida Sans Unicode&quot;;</string>
       </property>
       <property name="text">
-       <string>Condutores                </string>
+       <string>Condutores</string>
       </property>
       <property name="icon">
        <iconset>
