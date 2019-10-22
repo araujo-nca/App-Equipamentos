@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>Condutores</class>
  <widget class="QMainWindow" name="Condutores">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -28,6 +31,9 @@
   <property name="windowIcon">
    <iconset>
     <normaloff>Imagens/myIcon.png</normaloff>Imagens/myIcon.png</iconset>
+  </property>
+  <property name="inputMethodHints">
+   <set>Qt::ImhNone</set>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
@@ -310,7 +316,7 @@
       <rect>
        <x>30</x>
        <y>140</y>
-       <width>101</width>
+       <width>31</width>
        <height>16</height>
       </rect>
      </property>
@@ -318,12 +324,12 @@
       <string>Seção</string>
      </property>
     </widget>
-    <widget class="QRadioButton" name="radioButton">
+    <widget class="QRadioButton" name="radioButton_Unipolar">
      <property name="geometry">
       <rect>
        <x>370</x>
        <y>54</y>
-       <width>82</width>
+       <width>61</width>
        <height>17</height>
       </rect>
      </property>
@@ -331,12 +337,12 @@
       <string>Unipolar</string>
      </property>
     </widget>
-    <widget class="QRadioButton" name="radioButton_2">
+    <widget class="QRadioButton" name="radioButton_Tripolar">
      <property name="geometry">
       <rect>
        <x>370</x>
        <y>91</y>
-       <width>82</width>
+       <width>61</width>
        <height>17</height>
       </rect>
      </property>
@@ -349,7 +355,7 @@
       <rect>
        <x>270</x>
        <y>142</y>
-       <width>111</width>
+       <width>31</width>
        <height>21</height>
       </rect>
      </property>
@@ -365,7 +371,7 @@
       <rect>
        <x>270</x>
        <y>110</y>
-       <width>111</width>
+       <width>21</width>
        <height>21</height>
       </rect>
      </property>
@@ -381,7 +387,7 @@
       <rect>
        <x>363</x>
        <y>23</y>
-       <width>91</width>
+       <width>81</width>
        <height>21</height>
       </rect>
      </property>
@@ -405,7 +411,7 @@
     <property name="title">
      <string/>
     </property>
-    <widget class="QLabel" name="label_6">
+    <widget class="QLabel" name="label_Imagem">
      <property name="geometry">
       <rect>
        <x>60</x>
@@ -450,7 +456,7 @@
       <x>356</x>
       <y>230</y>
       <width>121</width>
-      <height>120</height>
+      <height>121</height>
      </rect>
     </property>
     <property name="text">
@@ -487,7 +493,7 @@
      <rect>
       <x>470</x>
       <y>220</y>
-      <width>61</width>
+      <width>31</width>
       <height>31</height>
      </rect>
     </property>
@@ -519,7 +525,7 @@
      <rect>
       <x>470</x>
       <y>273</y>
-      <width>61</width>
+      <width>31</width>
       <height>31</height>
      </rect>
     </property>
@@ -551,7 +557,7 @@
      <rect>
       <x>469</x>
       <y>328</y>
-      <width>61</width>
+      <width>21</width>
       <height>31</height>
      </rect>
     </property>
@@ -567,7 +573,7 @@
      <rect>
       <x>670</x>
       <y>230</y>
-      <width>111</width>
+      <width>31</width>
       <height>21</height>
      </rect>
     </property>
@@ -575,47 +581,7 @@
      <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
     </property>
     <property name="text">
-     <string>Ohm/km</string>
-    </property>
-   </widget>
-   <widget class="QLCDNumber" name="lcd_Rp">
-    <property name="geometry">
-     <rect>
-      <x>500</x>
-      <y>221</y>
-      <width>51</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLCDNumber" name="lcd_Rz">
-    <property name="geometry">
-     <rect>
-      <x>600</x>
-      <y>222</y>
-      <width>51</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLCDNumber" name="lcd_Xp">
-    <property name="geometry">
-     <rect>
-      <x>500</x>
-      <y>274</y>
-      <width>51</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLCDNumber" name="lcd_Xz">
-    <property name="geometry">
-     <rect>
-      <x>600</x>
-      <y>274</y>
-      <width>51</width>
-      <height>31</height>
-     </rect>
+     <string>Ω/km</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_17">
@@ -623,7 +589,7 @@
      <rect>
       <x>670</x>
       <y>280</y>
-      <width>111</width>
+      <width>31</width>
       <height>21</height>
      </rect>
     </property>
@@ -631,7 +597,7 @@
      <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
     </property>
     <property name="text">
-     <string>Ohm/km</string>
+     <string>Ω/km</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_18">
@@ -639,7 +605,7 @@
      <rect>
       <x>670</x>
       <y>340</y>
-      <width>111</width>
+      <width>31</width>
       <height>21</height>
      </rect>
     </property>
@@ -647,17 +613,7 @@
      <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
     </property>
     <property name="text">
-     <string>Ohm.km</string>
-    </property>
-   </widget>
-   <widget class="QLCDNumber" name="lcd_Xc">
-    <property name="geometry">
-     <rect>
-      <x>500</x>
-      <y>330</y>
-      <width>51</width>
-      <height>31</height>
-     </rect>
+     <string>Ω.km</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_19">
@@ -665,7 +621,7 @@
      <rect>
       <x>377</x>
       <y>390</y>
-      <width>221</width>
+      <width>171</width>
       <height>31</height>
      </rect>
     </property>
@@ -676,43 +632,201 @@
      <string>Corrente Nominal</string>
     </property>
    </widget>
-   <widget class="QLCDNumber" name="lcd_Xc_2">
-    <property name="geometry">
-     <rect>
-      <x>560</x>
-      <y>390</y>
-      <width>51</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_20">
-    <property name="geometry">
-     <rect>
-      <x>630</x>
-      <y>394</y>
-      <width>111</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-    </property>
-    <property name="text">
-     <string>A</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
       <x>40</x>
       <y>122</y>
-      <width>91</width>
+      <width>81</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
      <string>Nível de Tensão</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>230</y>
+      <width>41</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="acceptDrops">
+     <bool>true</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 9pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string>0.000</string>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+    <property name="clearButtonEnabled">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_2">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>282</y>
+      <width>41</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="acceptDrops">
+     <bool>true</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 9pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string>0.000</string>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+    <property name="clearButtonEnabled">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_3">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>333</y>
+      <width>41</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="acceptDrops">
+     <bool>true</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 9pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string>0.000</string>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+    <property name="clearButtonEnabled">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_4">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>230</y>
+      <width>41</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="acceptDrops">
+     <bool>true</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 9pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string>0.000</string>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+    <property name="clearButtonEnabled">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_5">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>280</y>
+      <width>41</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="acceptDrops">
+     <bool>true</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 9pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string>0.000</string>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+    <property name="clearButtonEnabled">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_6">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>394</y>
+      <width>41</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="acceptDrops">
+     <bool>true</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 9pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string>0.000</string>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+    <property name="clearButtonEnabled">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_20">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>394</y>
+      <width>21</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string>A</string>
     </property>
    </widget>
   </widget>
