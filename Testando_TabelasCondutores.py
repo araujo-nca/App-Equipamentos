@@ -9,7 +9,7 @@ import sys
 class TabelaCondutores(QtWidgets.QMainWindow):
     def __init__(self):
         super(TabelaCondutores, self).__init__()
-        uic.loadUi('Condutores TESTE.ui', self)
+        uic.loadUi('Condutores TESTE23.ui', self)
 
         self.show()
 
