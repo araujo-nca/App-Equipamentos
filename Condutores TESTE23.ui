@@ -435,7 +435,7 @@
       <rect>
        <x>192</x>
        <y>179</y>
-       <width>41</width>
+       <width>51</width>
        <height>20</height>
       </rect>
      </property>
@@ -467,7 +467,7 @@
       <rect>
        <x>242</x>
        <y>79</y>
-       <width>41</width>
+       <width>51</width>
        <height>20</height>
       </rect>
      </property>
@@ -563,7 +563,7 @@ color: rgba(0, 0, 0, 150);</string>
       <rect>
        <x>142</x>
        <y>28</y>
-       <width>41</width>
+       <width>51</width>
        <height>20</height>
       </rect>
      </property>
@@ -598,7 +598,7 @@ color: rgba(0, 0, 0, 150);</string>
       <rect>
        <x>142</x>
        <y>78</y>
-       <width>41</width>
+       <width>51</width>
        <height>20</height>
       </rect>
      </property>
@@ -696,7 +696,7 @@ color: rgba(0, 0, 0, 150);</string>
       <rect>
        <x>142</x>
        <y>128</y>
-       <width>41</width>
+       <width>51</width>
        <height>20</height>
       </rect>
      </property>
@@ -728,7 +728,7 @@ color: rgba(0, 0, 0, 150);</string>
       <rect>
        <x>242</x>
        <y>28</y>
-       <width>41</width>
+       <width>51</width>
        <height>20</height>
       </rect>
      </property>
@@ -821,7 +821,7 @@ color: rgba(0, 0, 0, 150);</string>
     <widget class="QLabel" name="label_20">
      <property name="geometry">
       <rect>
-       <x>240</x>
+       <x>250</x>
        <y>178</y>
        <width>21</width>
        <height>21</height>

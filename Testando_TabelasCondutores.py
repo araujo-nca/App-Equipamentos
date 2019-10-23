@@ -93,9 +93,17 @@ class TabelaCondutores(QtWidgets.QMainWindow):
             tabela = Planilha("Tabelas", "4.23.uni")
             secao = tabela.set_index("Seção condutor")
 
-            text = secao.loc[[float(self.combobox_Secao.currentText())],[str(self.combobox_ArranjoInstalacao.currentText())]]
+            corrente_nominal = secao.loc[[float(self.combobox_Secao.currentText())],[str(self.combobox_ArranjoInstalacao.currentText())]]
+            rp = secao.loc[[float(self.combobox_Secao.currentText())],["Rp"]]
+            rz = secao.loc[[float(self.combobox_Secao.currentText())],["Rz"]]
+            xp = secao.loc[[float(self.combobox_Secao.currentText())],["Xp"]]
+            xz = secao.loc[[float(self.combobox_Secao.currentText())],["Xz"]]
 
-            self.lineEdit_CorrenteNominal.setText(str(text))
+            self.lineEdit_CorrenteNominal.setText(str(corrente_nominal))
+            self.lineEdit_RP.setText(str(rp))
+            self.lineEdit_RZ.setText(str(rz))
+            self.lineEdit_XP.setText(str(xp))
+            self.lineEdit_XZ.setText(str(xz))
 
 
 
