@@ -16,9 +16,15 @@ def Planilha(equipamento, tabela):
 
 def main():
 
-    tabela = Planilha("Tabelas", "4.23.tri")
+    tabela = Planilha("Tabelas", "4.23.uni")
+    secao = tabela.set_index("Seção condutor")
 
-    print(tabela.head())
+    # text = secao.loc[["1.5"]["Duto único"]]
+
+
+    print(secao.loc[[4]])
+    # print(text)
+
 
 if __name__ == "__main__":
     main()

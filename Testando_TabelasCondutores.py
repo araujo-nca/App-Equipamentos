@@ -1,3 +1,4 @@
+import numpy as np
 from planilhas import Planilha
 from PyQt5 import QtWidgets, uic
 from PyQt5.QtCore import pyqtSlot
@@ -78,6 +79,29 @@ class TabelaCondutores(QtWidgets.QMainWindow):
         self.radioButton_Tripolar.clicked.connect(self.imagem_tripolar)
 
 
+        self.combobox_Secao.activated.connect(self.teste)
+        self.combobox_ArranjoInstalacao.activated.connect(self.teste)
+
+
+
+    # Teste
+    # ------------------------------------------------------------------------------------------
+    @pyqtSlot()
+    def teste(self):
+        if(self.radioButton_Unipolar.pressed):
+
+            tabela = Planilha("Tabelas", "4.23.uni")
+            secao = tabela.set_index("Seção condutor")
+
+            text = secao.loc[[float(self.combobox_Secao.currentText())],[str(self.combobox_ArranjoInstalacao.currentText())]]
+
+            self.lineEdit_CorrenteNominal.setText(str(text))
+
+
+
+    # ------------------------------------------------------------------------------------------
+
+
 
     @pyqtSlot()
     def imagem_unipolar(self):
@@ -89,6 +113,17 @@ class TabelaCondutores(QtWidgets.QMainWindow):
         imagem = QPixmap('Imagens/Cabo Tripolar.png')
         self.label_ImagemCondutor.setPixmap(imagem)
 
+    @pyqtSlot()
+    def CorrenteNominal(self):
+        pass
+
+    @pyqtSlot()
+    def CorrenteNominal(self):
+        pass
+    
+    @pyqtSlot()
+    def CorrenteNominal(self):
+        pass
 
 # Função Main
 def main():
