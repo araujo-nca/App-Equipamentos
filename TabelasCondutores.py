@@ -95,12 +95,18 @@ class TabelaCondutores(QtWidgets.QMainWindow):
         # Define a configuração ao defenir o tipo de condutor
         self.combobox_TipoCondutor.activated.connect(self.configuracao_tipo_de_condutor)
 
+        # Define a configuração ao defenir o material de isolamento
+        self.combobox_MaterialIsolante.activated.connect(self.configuracao_material_de_isolamento)
+
+
         # Atualiza os dados
         self.combobox_Secao.activated.connect(self.dados_tabela)
         self.combobox_ArranjoInstalacao.activated.connect(self.dados_tabela)
         self.combobox_MaterialIsolante.activated.connect(self.dados_tabela)
         self.combobox_TipoCondutor.activated.connect(self.dados_tabela)
         self.combobox_NivelTensao.activated.connect(self.dados_tabela)
+        self.radioButton_Unipolar.clicked.connect(self.dados_tabela)
+        self.radioButton_Tripolar.clicked.connect(self.dados_tabela)
 
 
     # Função para retornas os dados da tabela
@@ -261,6 +267,9 @@ class TabelaCondutores(QtWidgets.QMainWindow):
             self.lineEdit_XP.setText('-')
             self.lineEdit_XZ.setText('-')
             self.lineEdit_XC.setText('-')
+
+            self.erro = Erro()
+            self.erro.show()
         
 
 
@@ -337,6 +346,26 @@ class TabelaCondutores(QtWidgets.QMainWindow):
             self.combo_box_items(items_material_isolante, self.combobox_MaterialIsolante)
             self.combo_box_items(items_nivel_tesao, self.combobox_NivelTensao)
 
+    # Função para a configuração material de isolamento
+    @pyqtSlot()
+    def configuracao_material_de_isolamento(self):
+
+        if(bool(self.radioButton_Tripolar.isChecked())):
+
+            if(str(self.combobox_MaterialIsolante.currentText()) == 'EPR'):
+                # Listas com os itens para adicionar aos combo boxes
+                items_nivel_tesao = ['0.6/1.0','8.7/15']
+
+                # Adiciona os itens das listas para seus respectivos combo boxes
+                self.combo_box_items(items_nivel_tesao, self.combobox_NivelTensao)
+            else:
+                
+                self.configuracao_tripolar()
+            
+        else:
+
+            self.configuracao_unipolar()
+
 
 
 
@@ -351,13 +380,20 @@ class TabelaCondutores(QtWidgets.QMainWindow):
         for item in lista_de_items:
             combobox.addItem(item)
 
+# Caixa de diálogo para indicar que a configuração não está disponível
+class Erro(QtWidgets.QDialog):
+    def __init__(self):
+        super(Erro, self).__init__()
+        uic.loadUi('Erro.ui', self)
 
+        self.show()
 
 # Função Main, onde o construtor da aplicação é definido e é executado
 def main():
     app = QtWidgets.QApplication(sys.argv)
     window = TabelaCondutores()
     app.exec_()
+
 
 # Executa a aplicação
 if __name__ == "__main__":
