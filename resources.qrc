@@ -1,0 +1,16 @@
+<RCC>
+  <qresource prefix="Imagens">
+    <file>Imagens/Cabo Tripolar.png</file>
+    <file>Imagens/Cabo Unipolar.png</file>
+    <file>Imagens/Capacitor.png</file>
+    <file>Imagens/down-arrow.png</file>
+    <file>Imagens/Indutor.png</file>
+    <file>Imagens/ingenerie-electriqueestion.png</file>
+    <file>Imagens/Linha.png</file>
+    <file>Imagens/myIcon.png</file>
+    <file>Imagens/Resistor.png</file>
+    <file>Imagens/TC.png</file>
+    <file>Imagens/TP.png</file>
+    <file>Imagens/Wire Cu.png</file>
+  </qresource>
+</RCC>

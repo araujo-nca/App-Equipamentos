@@ -32,6 +32,9 @@
    <iconset>
     <normaloff>Imagens/myIcon.png</normaloff>Imagens/myIcon.png</iconset>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <property name="inputMethodHints">
    <set>Qt::ImhNone</set>
   </property>

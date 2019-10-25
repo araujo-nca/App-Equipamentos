@@ -2,6 +2,7 @@ from PyQt5 import QtWidgets, uic
 from PyQt5.QtCore import pyqtSlot
 from PyQt5.QtGui import QPixmap
 import sys
+import resources
 
 # Cria uma Classe para o App principal
 class Main(QtWidgets.QMainWindow):
