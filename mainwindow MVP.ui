@@ -746,8 +746,8 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
        <string>Condutores</string>
       </property>
       <property name="icon">
-       <iconset>
-        <normaloff>Wire Cu.png</normaloff>Wire Cu.png</iconset>
+       <iconset resource="resources.qrc">
+        <normaloff>:/Imagens/Imagens/Wire Cu.png</normaloff>:/Imagens/Imagens/Wire Cu.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -781,8 +781,8 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
        <string>Transformador de Potencial</string>
       </property>
       <property name="icon">
-       <iconset>
-        <normaloff>TP.png</normaloff>TP.png</iconset>
+       <iconset resource="resources.qrc">
+        <normaloff>:/Imagens/Imagens/TP.png</normaloff>:/Imagens/Imagens/TP.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -810,8 +810,8 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
        <string>Transformador de Corrente</string>
       </property>
       <property name="icon">
-       <iconset>
-        <normaloff>TC.png</normaloff>TC.png</iconset>
+       <iconset resource="resources.qrc">
+        <normaloff>:/Imagens/Imagens/TC.png</normaloff>:/Imagens/Imagens/TC.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -857,6 +857,8 @@ color: rgb(60, 66, 69);</string>
    </widget>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>
