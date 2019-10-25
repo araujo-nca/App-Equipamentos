@@ -79,37 +79,116 @@ class TabelaCondutores(QtWidgets.QMainWindow):
         self.radioButton_Tripolar.clicked.connect(self.imagem_tripolar)
 
 
-        self.combobox_Secao.activated.connect(self.teste)
-        self.combobox_ArranjoInstalacao.activated.connect(self.teste)
+        self.combobox_Secao.activated.connect(self.dados_tabela)
+        self.combobox_ArranjoInstalacao.activated.connect(self.dados_tabela)
+        self.combobox_MaterialIsolante.activated.connect(self.dados_tabela)
+        self.combobox_TipoCondutor.activated.connect(self.dados_tabela)
 
 
 
-    # Teste
+    # Retorna os dados da tabela
     # ------------------------------------------------------------------------------------------
     @pyqtSlot()
-    def teste(self):
-        if(self.radioButton_Unipolar.pressed):
+    def dados_tabela(self):
+
+        # Variáveis
+
+        material_isolante = str(self.combobox_MaterialIsolante.currentText())
+        tipo_de_condutor = str(self.combobox_TipoCondutor.currentText())
+        arranjo_instalacao = str(self.combobox_ArranjoInstalacao.currentText())
+        nivel_de_tensao = str(self.combobox_NivelTensao.currentText())
+        secao_condutor = float(self.combobox_Secao.currentText())
+        unipolar = bool(self.radioButton_Unipolar.isChecked())
+        tripolar = bool(self.radioButton_Tripolar.isChecked())
+        
+        
+        if(unipolar and material_isolante == 'PVC' and tipo_de_condutor == 'Cobre'):
 
             tabela = Planilha("Tabelas", "4.23.uni")
-            secao = tabela.set_index("Seção condutor")
 
-            corrente_nominal = secao.loc[[float(self.combobox_Secao.currentText())],[str(self.combobox_ArranjoInstalacao.currentText())]]
-            rp = secao.loc[[float(self.combobox_Secao.currentText())],["Rp"]]
-            rz = secao.loc[[float(self.combobox_Secao.currentText())],["Rz"]]
-            xp = secao.loc[[float(self.combobox_Secao.currentText())],["Xp"]]
-            xz = secao.loc[[float(self.combobox_Secao.currentText())],["Xz"]]
+        elif(tripolar and material_isolante == 'PVC' and tipo_de_condutor == 'Cobre'):
 
-            self.lineEdit_CorrenteNominal.setText(str(corrente_nominal))
-            self.lineEdit_RP.setText(str(rp))
-            self.lineEdit_RZ.setText(str(rz))
-            self.lineEdit_XP.setText(str(xp))
-            self.lineEdit_XZ.setText(str(xz))
+            tabela = Planilha("Tabelas", "4.23.tri")
 
+            self.del_item_in_combo("1.5")
+            self.del_item_in_combo("2.5")
+            self.del_item_in_combo("4")
+            self.del_item_in_combo("6")
+
+        elif(unipolar and material_isolante == 'XLPE' and tipo_de_condutor == 'Cobre' and nivel_de_tensao == '0.6/1.0'):
+
+            tabela = Planilha("Tabelas", "4.24.uni.0,6-1")
+
+
+        elif(tripolar and material_isolante == 'XLPE' and tipo_de_condutor == 'Cobre' and nivel_de_tensao == '0.6/1.0'):
+
+            tabela = Planilha("Tabelas", "4.24.tri.0,6-1")
+
+        elif(unipolar and material_isolante == 'XLPE' and tipo_de_condutor == 'Cobre' and nivel_de_tensao == '8.7/15'):
+
+            tabela = Planilha("Tabelas", "4.24.uni.8,7-15")
+
+        elif(tripolar and material_isolante == 'XLPE' and tipo_de_condutor == 'Cobre' and nivel_de_tensao == '8.7/15'):
+
+            tabela = Planilha("Tabelas", "4.24.tri.8,7-15")
+
+        elif(unipolar and material_isolante == 'EPR' and tipo_de_condutor == 'Cobre' and nivel_de_tensao == '0.6/1.0'):
+
+            tabela = Planilha("Tabelas", "4.25.uni.0,6-1")
+
+        elif(unipolar and material_isolante == 'EPR' and tipo_de_condutor == 'Cobre' and nivel_de_tensao == '8.7/15'):
+
+            tabela = Planilha("Tabelas", "4.25.uni.8,7-15")
+
+        elif(tripolar and material_isolante == 'EPR' and tipo_de_condutor == 'Cobre' and nivel_de_tensao == '0.6/1.0'):
+
+            tabela = Planilha("Tabelas", "4.25.tri.0,6-1")
+
+        elif(tripolar and material_isolante == 'EPR' and tipo_de_condutor == 'Cobre' and nivel_de_tensao == '8.7/15'):
+
+            tabela = Planilha("Tabelas", "4.25.tri.8,7-15")
+
+        elif(unipolar and material_isolante == 'XLPE' and tipo_de_condutor == 'Alumínio' and nivel_de_tensao == '8.7/15'):
+
+            tabela = Planilha("Tabelas", "4.26.uni.8,7-15")
+
+        elif(unipolar and material_isolante == 'XLPE' and tipo_de_condutor == 'Alumínio' and nivel_de_tensao == '20/35'):
+
+            tabela = Planilha("Tabelas", "4.26.uni.20-35")
+
+        elif(unipolar and material_isolante == 'EPR' and tipo_de_condutor == 'Alumínio' and nivel_de_tensao == '8.7/15'):
+
+            tabela = Planilha("Tabelas", "4.27.uni.8,7-15")
+
+        elif(unipolar and material_isolante == 'EPR' and tipo_de_condutor == 'Alumínio' and nivel_de_tensao == '20/35'):
+
+            tabela = Planilha("Tabelas", "4.27.uni.20-35")
+
+        else:
+            pass
+        
+        secao = tabela.set_index("Seção condutor")
+
+        corrente_nominal = secao.loc[[secao_condutor],[arranjo_instalacao]].values[0][0]
+        rp = secao.loc[[secao_condutor],["Rp"]].values[0][0]
+        rz = secao.loc[[secao_condutor],["Rz"]].values[0][0]
+        xp = secao.loc[[secao_condutor],["Xp"]].values[0][0]
+        xz = secao.loc[[secao_condutor],["Xz"]].values[0][0]
+
+        self.lineEdit_CorrenteNominal.setText(str(corrente_nominal))
+        self.lineEdit_RP.setText(str(rp))
+        self.lineEdit_RZ.setText(str(rz))
+        self.lineEdit_XP.setText(str(xp))
+        self.lineEdit_XZ.setText(str(xz))
+        
 
 
     # ------------------------------------------------------------------------------------------
 
-
+    def del_item_in_combo(self, text):
+        # currentTextChanged signal will pass selected text to slot
+        index = self.combobox_Secao.findText(text)  # find the index of text
+        self.combobox_Secao.removeItem(index)
 
     @pyqtSlot()
     def imagem_unipolar(self):
