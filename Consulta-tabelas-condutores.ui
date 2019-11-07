@@ -3,7 +3,7 @@
  <class>Condutores</class>
  <widget class="QMainWindow" name="Condutores">
   <property name="enabled">
-   <bool>true</bool>
+   <bool>false</bool>
   </property>
   <property name="geometry">
    <rect>
@@ -714,7 +714,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
       <x>10</x>
       <y>10</y>
       <width>401</width>
-      <height>200</height>
+      <height>261</height>
      </rect>
     </property>
     <property name="title">
@@ -985,7 +985,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
       <string>Unipolar</string>
      </property>
      <property name="checked">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
     </widget>
     <widget class="QRadioButton" name="radioButton_Tripolar">
@@ -1049,6 +1049,64 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
       <string>Configuração:</string>
      </property>
     </widget>
+    <widget class="QLabel" name="label_24">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>190</y>
+       <width>151</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Arranjo dos condutores:</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>213</y>
+       <width>295</width>
+       <height>38</height>
+      </rect>
+     </property>
+     <layout class="QFormLayout" name="formLayout">
+      <item row="0" column="0">
+       <widget class="QRadioButton" name="radioButton_Unipolar_2">
+        <property name="text">
+         <string>Plana</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QRadioButton" name="radioButton_Unipolar_5">
+        <property name="text">
+         <string>Espaçados assimetricamente</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QRadioButton" name="radioButton_Unipolar_3">
+        <property name="text">
+         <string>Em triângulo equilátero</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </widget>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
@@ -1077,7 +1135,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
     </property>
     <widget class="QLineEdit" name="lineEdit_CorrenteNominal">
      <property name="enabled">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -1109,7 +1167,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
     </widget>
     <widget class="QLineEdit" name="lineEdit_XZ">
      <property name="enabled">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -1205,7 +1263,7 @@ color: rgba(0, 0, 0, 150);</string>
     </widget>
     <widget class="QLineEdit" name="lineEdit_RP">
      <property name="enabled">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -1240,7 +1298,7 @@ color: rgba(0, 0, 0, 150);</string>
     </widget>
     <widget class="QLineEdit" name="lineEdit_XP">
      <property name="enabled">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -1338,7 +1396,7 @@ color: rgba(0, 0, 0, 150);</string>
     </widget>
     <widget class="QLineEdit" name="lineEdit_XC">
      <property name="enabled">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -1370,7 +1428,7 @@ color: rgba(0, 0, 0, 150);</string>
     </widget>
     <widget class="QLineEdit" name="lineEdit_RZ">
      <property name="enabled">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="geometry">
       <rect>
