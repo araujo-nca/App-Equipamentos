@@ -14,6 +14,7 @@ from planilhas import Planilha
 from PyQt5 import QtWidgets, uic
 from PyQt5.QtCore import pyqtSlot
 from PyQt5.QtGui import QPixmap
+from condutores import Condutor
 import sys
 import resources
 
@@ -31,10 +32,16 @@ class TabelaCondutores(QtWidgets.QMainWindow):
         # ----------------------------------------------------------------------------------------------
 
         # Define o Radio Button para a configuração unipolar
-        self.radioButton_Unipolar = self.findChild(QtWidgets.QRadioButton, 'radioButton_Unipolar')
+        self.radioButton_3unipolar = self.findChild(QtWidgets.QRadioButton, 'radioButton_3unipolares')
 
         # Define o Radio Button para a configuração tripolar
-        self.radioButton_Tripolar = self.findChild(QtWidgets.QRadioButton, 'radioButton_Tripolar')
+        self.radioButton_1tripolar = self.findChild(QtWidgets.QRadioButton, 'radioButton_1tripolar')
+        
+        self.radioButton_3uni_triangulo_eq = self.findChild(QtWidgets.QRadioButton, 'radioButton_3uni_triangulo_eq')
+
+        self.radioButton_3uni_plano = self.findChild(QtWidgets.QRadioButton, 'radioButton_3uni_plano')
+
+        self.radioButton_3uni_assimetricos = self.findChild(QtWidgets.QRadioButton, 'radioButton_3uni_assimetricos')        
 
         # Labels
         # ----------------------------------------------------------------------------------------------
@@ -87,10 +94,16 @@ class TabelaCondutores(QtWidgets.QMainWindow):
         # ------------------------------------------------------------------------------------------
         
         # Define a configuração ao clicar no radio button unipolar
-        self.radioButton_Unipolar.clicked.connect(self.configuracao_unipolar)
+        self.radioButton_3unipolar.clicked.connect(self.configuracao_tripolar)
 
         # Define a configuração ao clicar no radio button tripolar
-        self.radioButton_Tripolar.clicked.connect(self.configuracao_tripolar)
+        self.radioButton_1tripolar.clicked.connect(self.configuracao_tripolar)
+
+        self.radioButton_3uni_triangulo_eq.clicked.connect(self.configuracao_triangulo_equilatero)
+        
+        self.radioButton_3uni_plano.clicked.connect(self.configuracao_plano)
+        
+        self.radioButton_3uni_assimetricos.clicked.connect(self.configuracao_espacados_assimetricamente)
 
         # Define a configuração ao defenir o tipo de condutor
         self.combobox_TipoCondutor.activated.connect(self.configuracao_tipo_de_condutor)
@@ -105,8 +118,8 @@ class TabelaCondutores(QtWidgets.QMainWindow):
         self.combobox_MaterialIsolante.activated.connect(self.dados_tabela)
         self.combobox_TipoCondutor.activated.connect(self.dados_tabela)
         self.combobox_NivelTensao.activated.connect(self.dados_tabela)
-        self.radioButton_Unipolar.clicked.connect(self.dados_tabela)
-        self.radioButton_Tripolar.clicked.connect(self.dados_tabela)
+        self.radioButton_3unipolar.clicked.connect(self.dados_tabela)
+        self.radioButton_1tripolar.clicked.connect(self.dados_tabela)
 
 
     # Função para retornas os dados da tabela
@@ -120,8 +133,8 @@ class TabelaCondutores(QtWidgets.QMainWindow):
         arranjo_instalacao = str(self.combobox_ArranjoInstalacao.currentText())
         nivel_de_tensao = str(self.combobox_NivelTensao.currentText())
         secao_condutor = float(self.combobox_Secao.currentText())
-        unipolar = bool(self.radioButton_Unipolar.isChecked())
-        tripolar = bool(self.radioButton_Tripolar.isChecked())
+        unipolar = bool(self.radioButton_3unipolar.isChecked())
+        tripolar = bool(self.radioButton_1tripolar.isChecked())
 
 
         # Função para mostrar os dados da tela
@@ -315,6 +328,59 @@ class TabelaCondutores(QtWidgets.QMainWindow):
         self.combo_box_items(items_nivel_tesao, self.combobox_NivelTensao)
         self.combo_box_items(items_tipo_condutor, self.comboBox_TipoCondutor)
 
+    # Função para a configuração triangular equilatero INCLUI APENAS A IMAGEM CORRESPONDENTE
+    @pyqtSlot()
+    def configuracao_triangulo_equilatero(self):
+
+        # Mostra na tela uma imagem de um cabo tripolar
+        imagem = QPixmap('Imagens/Unipolar_Equilatero.png')
+        self.label_ImagemCondutor.setPixmap(imagem)
+
+        # Listas com os itens para adicionar aos combo boxes
+        items_secao = ['25', '35', '50', '70', '95', '120', '150', '185', '240']
+        items_nivel_tesao = ['0.6/1.0','8.7/15' ,'20/35']
+        items_tipo_condutor = ['Cobre']
+
+        # Adiciona os itens das listas para seus respectivos combo boxes
+        self.combo_box_items(items_secao, self.combobox_Secao)
+        self.combo_box_items(items_nivel_tesao, self.combobox_NivelTensao)
+        self.combo_box_items(items_tipo_condutor, self.comboBox_TipoCondutor)
+
+    # Função para a configuração plana INCLUI APENAS A IMAGEM CORRESPONDENTE
+    @pyqtSlot()
+    def configuracao_plano(self):
+
+        # Mostra na tela uma imagem de um cabo tripolar
+        imagem = QPixmap('Imagens/Unipolar_Plana.png')
+        self.label_ImagemCondutor.setPixmap(imagem)
+
+        # Listas com os itens para adicionar aos combo boxes
+        items_secao = ['25', '35', '50', '70', '95', '120', '150', '185', '240']
+        items_nivel_tesao = ['0.6/1.0','8.7/15' ,'20/35']
+        items_tipo_condutor = ['Cobre']
+
+        # Adiciona os itens das listas para seus respectivos combo boxes
+        self.combo_box_items(items_secao, self.combobox_Secao)
+        self.combo_box_items(items_nivel_tesao, self.combobox_NivelTensao)
+        self.combo_box_items(items_tipo_condutor, self.comboBox_TipoCondutor)
+
+    # Função para a configuração espaçada assimetricamente INCLUI APENAS A IMAGEM CORRESPONDENTE
+    @pyqtSlot()
+    def configuracao_espacados_assimetricamente(self):
+
+        # Mostra na tela uma imagem de um cabo tripolar
+        imagem = QPixmap('Imagens/Unipolar_Espaçados.png')
+        self.label_ImagemCondutor.setPixmap(imagem)
+
+        # Listas com os itens para adicionar aos combo boxes
+        items_secao = ['25', '35', '50', '70', '95', '120', '150', '185', '240']
+        items_nivel_tesao = ['0.6/1.0','8.7/15' ,'20/35']
+        items_tipo_condutor = ['Cobre']
+
+        # Adiciona os itens das listas para seus respectivos combo boxes
+        self.combo_box_items(items_secao, self.combobox_Secao)
+        self.combo_box_items(items_nivel_tesao, self.combobox_NivelTensao)
+        self.combo_box_items(items_tipo_condutor, self.comboBox_TipoCondutor)
 
     # Função para a configuração tipo de condutor
     @pyqtSlot()
@@ -350,7 +416,7 @@ class TabelaCondutores(QtWidgets.QMainWindow):
     @pyqtSlot()
     def configuracao_material_de_isolamento(self):
 
-        if(bool(self.radioButton_Tripolar.isChecked())):
+        if(bool(self.radioButton_1tripolar.isChecked())):
 
             if(str(self.combobox_MaterialIsolante.currentText()) == 'EPR'):
                 # Listas com os itens para adicionar aos combo boxes
