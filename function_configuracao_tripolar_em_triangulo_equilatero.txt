@@ -21,7 +21,6 @@ def configuracao_tripolar_em_triangulo_equilatero(self):
         Ebe = 0.3
         Ebm = 0.08
 
-        condutor = Condutor(material_isolante, tipo_de_condutor, secao_condutor, nivel_de_tensao)
         if material_isolante == "XLPE":
             
             resistividade = condutor.resistividade_condutor()
