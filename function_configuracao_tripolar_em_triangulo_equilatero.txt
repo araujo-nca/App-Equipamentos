@@ -1,0 +1,68 @@
+def configuracao_tripolar_em_triangulo_equilatero(self):
+        
+        # Variáveis do condutor
+        material_isolante = str(self.combobox_MaterialIsolante.currentText())
+        tipo_de_condutor = str(self.combobox_TipoCondutor.currentText())
+        arranjo_instalacao = str(self.combobox_ArranjoInstalacao.currentText())
+        nivel_de_tensao = str(self.combobox_NivelTensao.currentText())
+        secao_condutor = float(self.combobox_Secao.currentText())
+        unipolar = bool(self.radioButton_Unipolar.isChecked())
+        tripolar = bool(self.radioButton_Tripolar.isChecked())
+
+        condutor = Condutor(material_isolante, tipo_de_condutor, secao_condutor, nivel_de_tensao)
+        dmg = Dmg()
+        resistividade = condutor.resistividade_condutor()
+        temperatura_condutor = 90
+        distancia_entre_cabos = dmg.tres_cabos_unipolares_em_triangulo_equilatero(unipolar)
+        temperatura_blindagem = 85
+
+        K4 = 1.1
+        Ebi = 0.3
+        Ebe = 0.3
+        Ebm = 0.08
+
+        condutor = Condutor(material_isolante, tipo_de_condutor, secao_condutor, nivel_de_tensao)
+        if material_isolante == "XLPE":
+            
+            resistividade = condutor.resistividade_condutor()
+            temperatura_condutor = 90
+
+            zp = condutor.impedancia_positiva_aterrada_um_ponto(temperatura_condutor, "Três_cabos_unipolares_em_triangulo_equilatero", distancia_entre_cabos)
+            rp = np.real(zp)
+            xp = np.imag(zp)
+
+            zz = condutor.impedancia_zero_blindagem_aterrada_um_ponto(resistividade, temperatura_condutor, temperatura_blindagem, K4, Ebi, Ebe, Ebm, "Três_cabos_unipolares_em_triangulo_equilatero", distancia_entre_cabos)
+            rz = np.real(zz)
+            xz = np.imag(zz)
+
+        elif material_isolante == "EPR":
+            
+            resistividade = condutor.resistividade_condutor()
+            temperatura_condutor = 90
+
+            zp = condutor.impedancia_positiva_aterrada_um_ponto(temperatura_condutor, "Três_cabos_unipolares_em_triangulo_equilatero", distancia_entre_cabos)
+            rp = np.real(zp)
+            xp = np.imag(zp)
+            
+            zz = condutor.impedancia_zero_blindagem_aterrada_um_ponto(resistividade, temperatura_condutor, temperatura_blindagem, K4, Ebi, Ebe, Ebm, "Três_cabos_unipolares_em_triangulo_equilatero", distancia_entre_cabos)
+            rz = np.real(zz)
+            xz = np.imag(zz)
+
+        elif material_isolante == "PVC":
+            
+            resistividade = condutor.resistividade_condutor()
+            temperatura_condutor = 70
+            
+            zp = condutor.impedancia_positiva_aterrada_um_ponto(temperatura_condutor, "Três_cabos_unipolares_em_triangulo_equilatero", distancia_entre_cabos)
+            rp = np.real(zp)
+            xp = np.imag(zp)
+        
+            zz = condutor.impedancia_zero_blindagem_aterrada_um_ponto(resistividade, temperatura_condutor, temperatura_blindagem, K4, Ebi, Ebe, Ebm, "Três_cabos_unipolares_em_triangulo_equilatero", distancia_entre_cabos)
+            rz = np.real(zz)
+            xz = np.imag(zz)
+        
+            self.lineEdit_RP.setText(str(rp))
+            self.lineEdit_RZ.setText(str(rz))
+            self.lineEdit_XP.setText(str(xp))
+            self.lineEdit_XZ.setText(str(xz))
+            
