@@ -689,379 +689,333 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
    <set>Qt::ImhNone</set>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>-10</x>
-      <y>190</y>
-      <width>361</width>
-      <height>331</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>Imagens/Wire Cu.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
    <widget class="QGroupBox" name="groupBox_2">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>10</y>
       <width>401</width>
-      <height>200</height>
+      <height>421</height>
      </rect>
     </property>
     <property name="title">
      <string>Características</string>
     </property>
-    <widget class="QLabel" name="label_3">
+    <widget class="QLabel" name="label_24">
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>60</y>
-       <width>91</width>
-       <height>16</height>
+       <y>240</y>
+       <width>151</width>
+       <height>21</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+     </property>
      <property name="text">
-      <string>Tipo de Condutor</string>
+      <string>Arranjo dos condutores:</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_2">
+    <widget class="QWidget" name="">
      <property name="geometry">
       <rect>
        <x>30</x>
        <y>30</y>
-       <width>81</width>
-       <height>16</height>
+       <width>245</width>
+       <height>185</height>
       </rect>
      </property>
-     <property name="text">
-      <string>Material Isolante</string>
-     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <property name="horizontalSpacing">
+       <number>8</number>
+      </property>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string>Nível de Tensão</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="2">
+       <widget class="QLabel" name="label_22">
+        <property name="styleSheet">
+         <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+        </property>
+        <property name="text">
+         <string>kV</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QComboBox" name="comboBox_MaterialIsolante">
+        <item>
+         <property name="text">
+          <string>XLPE</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>PVC</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>EPR</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>Tipo de Condutor</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QComboBox" name="comboBox_TipoCondutor">
+        <item>
+         <property name="text">
+          <string>Cobre</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Alumínio</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Material Isolante</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QComboBox" name="comboBox_ArranjoInstalacao">
+        <item>
+         <property name="text">
+          <string>Duto único</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Ao ar livre</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Dir. enterrado</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Canaleta</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Eletroduto</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QComboBox" name="comboBox_NivelTensao">
+        <item>
+         <property name="text">
+          <string>0.6/1.0</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>8.7/15</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QComboBox" name="comboBox_Secao">
+        <item>
+         <property name="text">
+          <string>1.5</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>2.5</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>4</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>6</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>10</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>16</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>25</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>35</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>50</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>70</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>95</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>120</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>150</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>185</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>240</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>300</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>400</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>500</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="label_7">
+        <property name="text">
+         <string>Seção</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="2">
+       <widget class="QLabel" name="label_21">
+        <property name="styleSheet">
+         <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+        </property>
+        <property name="text">
+         <string>mm²</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>Arranjo de instalação</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
-    <widget class="QComboBox" name="comboBox_MaterialIsolante">
-     <property name="geometry">
-      <rect>
-       <x>150</x>
-       <y>30</y>
-       <width>111</width>
-       <height>22</height>
-      </rect>
-     </property>
-     <item>
-      <property name="text">
-       <string>XLPE</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>PVC</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>EPR</string>
-      </property>
-     </item>
-    </widget>
-    <widget class="QComboBox" name="comboBox_TipoCondutor">
-     <property name="geometry">
-      <rect>
-       <x>150</x>
-       <y>60</y>
-       <width>111</width>
-       <height>22</height>
-      </rect>
-     </property>
-     <item>
-      <property name="text">
-       <string>Cobre</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Alumínio</string>
-      </property>
-     </item>
-    </widget>
-    <widget class="QComboBox" name="comboBox_ArranjoInstalacao">
-     <property name="geometry">
-      <rect>
-       <x>150</x>
-       <y>90</y>
-       <width>111</width>
-       <height>22</height>
-      </rect>
-     </property>
-     <item>
-      <property name="text">
-       <string>Duto único</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Ao ar livre</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Dir. enterrado</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Canaleta</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Eletroduto</string>
-      </property>
-     </item>
-    </widget>
-    <widget class="QLabel" name="label_5">
+    <widget class="QWidget" name="">
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>92</y>
-       <width>111</width>
-       <height>16</height>
+       <y>270</y>
+       <width>268</width>
+       <height>141</height>
       </rect>
      </property>
-     <property name="text">
-      <string>Arranjo de instalação</string>
-     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="1" column="0">
+       <widget class="QRadioButton" name="radioButton_1tripolar">
+        <property name="text">
+         <string>1 cabo tripolar</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QRadioButton" name="radioButton_3unipolares">
+        <property name="text">
+         <string>3 cabos unipolares</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QRadioButton" name="radioButton_3uni_triangulo_eq">
+        <property name="text">
+         <string>3 unipolares em triângulo equilátero</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QRadioButton" name="radioButton_3uni_plano">
+        <property name="text">
+         <string>3 unipolares igualmente espaçados em um só plano</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QRadioButton" name="radioButton_3uni_assimetricos">
+        <property name="text">
+         <string>3 unipolares espaçados assimetricamente</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
-    <widget class="QComboBox" name="comboBox_NivelTensao">
-     <property name="geometry">
-      <rect>
-       <x>150</x>
-       <y>120</y>
-       <width>111</width>
-       <height>22</height>
-      </rect>
-     </property>
-     <item>
-      <property name="text">
-       <string>0.6/1.0</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>8.7/15</string>
-      </property>
-     </item>
-    </widget>
-    <widget class="QComboBox" name="comboBox_Secao">
-     <property name="geometry">
-      <rect>
-       <x>150</x>
-       <y>150</y>
-       <width>111</width>
-       <height>22</height>
-      </rect>
-     </property>
-     <item>
-      <property name="text">
-       <string>1.5</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>2.5</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>4</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>6</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>10</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>16</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>25</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>35</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>50</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>70</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>95</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>120</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>150</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>185</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>240</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>300</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>400</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>500</string>
-      </property>
-     </item>
-    </widget>
-    <widget class="QLabel" name="label_7">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>150</y>
-       <width>31</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Seção</string>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="radioButton_Unipolar">
-     <property name="geometry">
-      <rect>
-       <x>317</x>
-       <y>58</y>
-       <width>61</width>
-       <height>17</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Unipolar</string>
-     </property>
-     <property name="checked">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="radioButton_Tripolar">
-     <property name="geometry">
-      <rect>
-       <x>317</x>
-       <y>95</y>
-       <width>61</width>
-       <height>17</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Tripolar</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_21">
-     <property name="geometry">
-      <rect>
-       <x>270</x>
-       <y>152</y>
-       <width>31</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-     </property>
-     <property name="text">
-      <string>mm²</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_22">
-     <property name="geometry">
-      <rect>
-       <x>270</x>
-       <y>120</y>
-       <width>21</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-     </property>
-     <property name="text">
-      <string>kV</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_23">
-     <property name="geometry">
-      <rect>
-       <x>310</x>
-       <y>27</y>
-       <width>81</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-     </property>
-     <property name="text">
-      <string>Configuração:</string>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QLabel" name="label_4">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>132</y>
-      <width>81</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Nível de Tensão</string>
-    </property>
    </widget>
    <widget class="QGroupBox" name="groupBox_3">
     <property name="geometry">
@@ -1601,9 +1555,7 @@ color: rgba(0, 0, 0, 150);</string>
     </property>
    </widget>
    <zorder>groupBox_3</zorder>
-   <zorder>label</zorder>
    <zorder>groupBox_2</zorder>
-   <zorder>label_4</zorder>
    <zorder>label_ImagemCondutor</zorder>
   </widget>
  </widget>
