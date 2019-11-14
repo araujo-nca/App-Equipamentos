@@ -72,6 +72,9 @@ class TabelaCondutores(QtWidgets.QMainWindow):
         # Line Edit
         # ----------------------------------------------------------------------------------------------
 
+        # Define o Line Edit para a entrada distancia
+        self.lineEdit_distanciaDMG = self.findChild(QtWidgets.QLineEdit, "lineEdit_distanciaDMG")
+        
         # Define o Line Edit para a variável Rp
         self.lineEdit_RP = self.findChild(QtWidgets.QLineEdit, "lineEdit_RP")
         
@@ -440,16 +443,18 @@ class TabelaCondutores(QtWidgets.QMainWindow):
         # Variáveis do condutor
         material_isolante = str(self.combobox_MaterialIsolante.currentText())
         tipo_de_condutor = str(self.combobox_TipoCondutor.currentText())
-        arranjo_instalacao = str(self.combobox_ArranjoInstalacao.currentText())
+        # arranjo_instalacao = str(self.combobox_ArranjoInstalacao.currentText())
         nivel_de_tensao = str(self.combobox_NivelTensao.currentText())
         secao_condutor = float(self.combobox_Secao.currentText())
-        tri_equilatero = bool(self.radioButton_3uni_triangulo_eq.isChecked())
+        # tri_equilatero = bool(self.radioButton_3uni_triangulo_eq.isChecked())
+        distanciaDMG = float(self.lineEdit_distanciaDMG.text())
 
         condutor = Condutor(material_isolante, tipo_de_condutor, secao_condutor, nivel_de_tensao)
         dmg = Dmg()
         resistividade = condutor.resistividade_condutor()
         temperatura_condutor = 90
-        distancia_entre_cabos = dmg.tres_cabos_unipolares_em_triangulo_equilatero(tri_equilatero)
+        distancia_entre_cabos = dmg.tres_cabos_unipolares_em_triangulo_equilatero(distanciaDMG)
+        # distancia_entre_cabos = 1
         temperatura_blindagem = 85
 
         K4 = 1.1
