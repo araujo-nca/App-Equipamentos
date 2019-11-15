@@ -341,9 +341,9 @@ class TabelaCondutores(QtWidgets.QMainWindow):
         self.label_ImagemCondutor.setPixmap(imagem)
 
         # Listas com os itens para adicionar aos combo boxes
-        items_secao = ['25', '35', '50', '70', '95', '120', '150', '185', '240']
-        items_nivel_tesao = ['0.6/1.0','8.7/15' ,'20/35']
-        items_tipo_condutor = ['Cobre']
+        items_secao = ['1.5','2.5','4','6','10','16','25', '35', '50', '70', '95', '120', '150', '185', '240','300','400','500']
+        items_nivel_tesao = ['8.7/15','12/20']
+        items_tipo_condutor = ['Cobre', 'Alumínio']
 
         # Adiciona os itens das listas para seus respectivos combo boxes
         self.combo_box_items(items_secao, self.combobox_Secao)
@@ -443,18 +443,30 @@ class TabelaCondutores(QtWidgets.QMainWindow):
         # Variáveis do condutor
         material_isolante = str(self.combobox_MaterialIsolante.currentText())
         tipo_de_condutor = str(self.combobox_TipoCondutor.currentText())
-        # arranjo_instalacao = str(self.combobox_ArranjoInstalacao.currentText())
+        arranjo_instalacao = str(self.combobox_ArranjoInstalacao.currentText())
         nivel_de_tensao = str(self.combobox_NivelTensao.currentText())
         secao_condutor = float(self.combobox_Secao.currentText())
         # tri_equilatero = bool(self.radioButton_3uni_triangulo_eq.isChecked())
         distanciaDMG = float(self.lineEdit_distanciaDMG.text())
+
+        print(tipo_de_condutor)
+        if tipo_de_condutor == "Cobre":
+            tipo_de_condutor = "Fio de cobre duro"
+        elif tipo_de_condutor == "Alumínio":
+            tipo_de_condutor = "Fio de alumínio duro"
+        else:
+            self.erro.show()
+
+        if nivel_de_tensao == "Cobre":
+            tipo_de_condutor = "Fio de cobre duro"
+        else:
+            self.erro.show()
 
         condutor = Condutor(material_isolante, tipo_de_condutor, secao_condutor, nivel_de_tensao)
         dmg = Dmg()
         resistividade = condutor.resistividade_condutor()
         temperatura_condutor = 90
         distancia_entre_cabos = dmg.tres_cabos_unipolares_em_triangulo_equilatero(distanciaDMG)
-        # distancia_entre_cabos = 1
         temperatura_blindagem = 85
 
         K4 = 1.1
